@@ -25,7 +25,11 @@
 {%- macro title_post(page, config) %}
 {%- set uglyurls = config.extra.uglyurls | default(value=false) -%}
 {%- if config.extra.offline %}{% set uglyurls = true %}{% endif %}
-      <h1><a href="{{ page.permalink | safe }}{%- if uglyurls %}index.html{%- endif %}">{{ page.title }}</a></h1>
+      <h1>
+        <span class="{{ config.extra.title_size_index }}">
+          <a href="{{ page.permalink | safe }}{%- if uglyurls %}index.html{%- endif %}">{{ page.title }}</a>
+        </span>
+      </h1>
 {%- endmacro title_post %}
 
 
